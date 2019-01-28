@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Exercise {
@@ -16,13 +17,13 @@ public class Exercise {
   public String description;
   public String timeStamp;
 
-  public Exercise (){};
+  public Exercise (){}
 
-  public Exercise(String nameOfExercise, String reps, String description, String timeStamp){
+  public Exercise(String nameOfExercise, String reps, String description){
     this.nameOfExercise = nameOfExercise;
     this.reps = reps;
     this.description = description;
-    this.timeStamp = timeStamp;
+    this.timeStamp = new Date().toString();
   }
 
   @Override
